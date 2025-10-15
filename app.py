@@ -76,8 +76,8 @@ if uploaded_file:
 
         logo_stream = BytesIO(response.content)
         img = Image(logo_stream)
-        img.width = 130
-        img.height = 130
+        img.width = 120
+        img.height = 120
         ws.add_image(img, "A1")
 
         start_row_horas = 8
@@ -155,3 +155,4 @@ if uploaded_file:
         file_name="Planilha_Final_Clientes.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
