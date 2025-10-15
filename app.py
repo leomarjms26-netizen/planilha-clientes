@@ -16,7 +16,7 @@ LOGO_URL = "https://media.licdn.com/dms/image/v2/C4D0BAQFynSl_Yj90cQ/company-log
 VALOR_HORA_DEFAULT = 462.62
 
 
-st.set_page_config(page_title="Gerarador de Planilha", layout="wide")
+st.set_page_config(page_title="Gerador de Planilha", layout="wide")
 st.title("📊 Planilha Cliente Final")
 
 uploaded_file = st.file_uploader("📤 Envie a planilha BRUTA (xlsx/xls)", type=["xlsx", "xls"])
@@ -155,5 +155,6 @@ if uploaded_file:
         file_name="Planilha_Final_Clientes.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
 
 
