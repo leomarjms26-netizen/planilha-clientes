@@ -13,8 +13,58 @@ from openpyxl.styles import Border, Side, PatternFill, Font, Alignment
 
 
 LOGO_URL = "https://media.licdn.com/dms/image/v2/C4D0BAQFynSl_Yj90cQ/company-logo_200_200/company-logo_200_200/0/1630472942468/vicente_monteiro_advogados_logo?e=2147483647&v=beta&t=HUb5xhVbshv-LGKYpmpkkuJfUxX30S5oMjefFv7jM4s"
+BACKGROUND_URL = "https://raw.githubusercontent.com/leomarjms26-netizen/planilha-clientes/refs/heads/main/vm-4.jpg"
 VALOR_HORA_DEFAULT = 462.62
 
+st.markdown(
+    f"""
+    <style>
+    html, body, [class*="stAppViewContainer"], [class*="stApp"], [data-testid="stAppViewContainer"] {{
+        background: 
+            linear-gradient(rgba(5,85,119,0.75), rgba(5,85,119,0.75)),
+            url('{BACKGROUND_URL}') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: fixed !important;
+    }}
+
+    [data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stSidebar"] {{
+        background: rgba(5,85,119,0.7) !important;
+        backdrop-filter: blur(6px);
+    }}
+
+    /* Texto e títulos em branco */
+    h1, h2, h3, h4, h5, h6, p, label, span, div {{
+        color: #f8f9fa !important;
+    }}
+
+    /* Caixas escuras translúcidas para componentes */
+    .stFileUploader, .stDownloadButton, .stTextInput, .stSelectbox, .stDataFrame, .stAlert {{
+        background-color: rgba(0, 0, 0, 0.55) !important;
+        border-radius: 12px;
+        padding: 14px;
+        color: #ffffff !important;
+    }}
+
+    /* Borda e sombra sutil */
+    .stFileUploader, .stDownloadButton {{
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255,255,255,0.1);
+    }}
+
+    /* Botões */
+    button[kind="primary"], .stDownloadButton > button {{
+        background-color: rgba(5,85,119,0.9) !important;
+        color: #ffffff !important;
+        border: none !important;
+    }}
+    button[kind="primary"]:hover, .stDownloadButton > button:hover {{
+        background-color: rgba(5,100,140,1) !important;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.set_page_config(page_title="Gerador de Planilha", layout="wide")
 st.title("📊 Planilha Cliente Final")
@@ -155,6 +205,7 @@ if uploaded_file:
         file_name="Planilha_Final_Clientes.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
 
 
 
