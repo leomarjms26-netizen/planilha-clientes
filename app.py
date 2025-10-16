@@ -66,8 +66,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.set_page_config(page_title="Gerador de Planilha", layout="wide")
-st.title("📊 Planilha Cliente Final")
+st.set_page_config(page_title="Cliente Mensais", layout="wide")
+st.title("⚖️ Clientes Mensais")
 
 uploaded_file = st.file_uploader("📤 Envie a planilha BRUTA (xlsx/xls)", type=["xlsx", "xls"])
 
@@ -205,6 +205,7 @@ if uploaded_file:
         file_name="Planilha_Final_Clientes.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
 
 
 
